@@ -1,0 +1,22 @@
+{
+  "extension": "@mgreten/read-only-investigation",
+  "version": "2026.08.23.1",
+  "reviewedAt": "2026-08-23T19:53:56Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "na", "note": "No credentials or configuration." },
+    { "id": "logging-quality", "verdict": "pass", "note": "prepare logs structured entry and completion without input content." },
+    { "id": "error-handling", "verdict": "pass", "note": "Strict validation and all policy checks complete before the sole resource write." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Synthetic tests cover success, failure, malformed input, no-authority output, deterministic replay, tamper distinction, and persistence." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "Canonical input hashes make exact replay stable and changed replay use a distinct resource identity." },
+    { "id": "api-contracts", "verdict": "na", "note": "No HTTP, provider SDK, or external API calls." },
+    { "id": "resource-management", "verdict": "na", "note": "No external handles, files, subprocesses, or temporary resources." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "README and synthetic fixtures contain no infrastructure identifiers or unsupported sandbox claims." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "All input, nested, authority, query, and output objects are strict; output schema fields match the sole write 1:1." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "The immutable plan resource declares infinite lifetime and bounded retained generations." },
+    { "id": "crud-completeness", "verdict": "na", "note": "Pure planning evaluator with no external resource lifecycle." },
+    { "id": "preflight-checks", "verdict": "na", "note": "No external mutating operation exists; prepare validates before its datastore write." },
+    { "id": "instance-names", "verdict": "pass", "note": "The sole instance name binds validated requestId to a canonical request digest prefix." },
+    { "id": "data-access", "verdict": "na", "note": "The stateless evaluator does not read stored resources." },
+    { "id": "version-upgrades", "verdict": "na", "note": "Initial unpublished version; no prior schema requires migration." }
+  ]
+}
